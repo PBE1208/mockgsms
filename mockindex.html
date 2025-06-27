@@ -59,7 +59,7 @@
 <body class="bg-gray-100">
 
     <!-- Disclaimer Banner -->
-    <div class="disclaimer p-4 text-center font-semibold">
+    <div class="disclaimer p-4 text-center font-semibold sticky top-0 z-50">
         <p>Notice: this is not the official WHO website. It is a demonstration of skills acquired through a bootcamp on GenAi. 
         <a href="https://www.who.int/health-topics/substandard-and-falsified-medical-products#tab=tab_1" target="_blank" rel="noopener noreferrer">Click here to access the official WHO pages on substandard-falsified medical products</a>.</p>
     </div>
@@ -72,7 +72,7 @@
     </header>
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-40">
+    <nav class="bg-white shadow-md sticky top-[68px] z-40">
         <div class="container mx-auto flex justify-center space-x-6 p-3">
             <a href="#gsms" class="text-who-navy hover:text-who-blue font-semibold">GSMS</a>
             <a href="#msm" class="text-who-navy hover:text-who-blue font-semibold">Member State Mechanism</a>
@@ -85,24 +85,29 @@
     <!-- Main Content -->
     <main class="container mx-auto p-8">
         
+        <!-- Chatbot Notice Box -->
+        <div class="p-6 bg-blue-50 border-l-4 border-who-blue rounded-r-lg mb-8 text-lg font-bold">
+            <p>For any questions use the chatbot function (bottom right corner of this webpage).</p>
+        </div>
+
         <!-- Section 1: The Global Surveillance and Monitoring System -->
-        <section id="gsms" class="bg-white p-8 rounded-lg shadow-lg mb-12 scroll-mt-24">
+        <section id="gsms" class="bg-white p-8 rounded-lg shadow-lg mb-12 scroll-mt-40">
             <h2 class="text-3xl font-bold text-who-navy border-b-4 border-who-blue pb-2 mb-6">The Global Surveillance and Monitoring System</h2>
             <div class="space-y-4 text-lg leading-relaxed">
-                <p>The WHO Global Surveillance and Monitoring System (GSMS) is a technical programme launched in 2010 to address the global threat posed by substandard and falsified medical products (SFMP). These products undermine public health efforts, compromise patient safety, and erode trust in health systems. The GSMS serves as the WHO central mechanism to prevent, detect, and respond to SFMP incidents worldwide.</p>
+                <p>The WHO Global Surveillance and Monitoring System (GSMS) is a technical programme launched in 2010 to address the global threat posed by <a href="https://www.who.int/teams/regulation-prequalification/incidents-and-SF/background/definitions" target="_blank" rel="noopener noreferrer" class="section-link">substandard and falsified medical products (SFMP)</a>. These products undermine all investments in public health, compromise patient safety, and erode trust in health systems. The GSMS serves as WHO’s central instrument to prevent, detect, and respond to SFMP incidents worldwide.</p>
                 
                 <div class="p-6 bg-blue-50 border-l-4 border-who-blue rounded-r-lg">
                     <h3 class="text-2xl font-bold text-who-navy mb-3">A Three-Pillar Strategy</h3>
                     <p>The holistic WHO strategy to combat SFMP is articulated on three pillars:</p>
                     <ul class="list-disc list-inside mt-2 space-y-1">
-                        <li><strong>Prevention:</strong> Securing the supply of quality and safe medical products and ensuring corresponding demand.</li>
-                        <li><strong>Detection:</strong> Enhancing laboratory testing, surveillance, and information sharing.</li>
-                        <li><strong>Response:</strong> Preventing recurrence and strengthening regulatory systems.</li>
+                        <li><strong>Prevent:</strong> Secure the supply of (and demand for) quality and safe medical products.</li>
+                        <li><strong>Detect:</strong> Increase surveillance and improve information sharing.</li>
+                        <li><strong>Respond:</strong> Prevent recurrence and strengthen regulatory systems.</li>
                     </ul>
                 </div>
 
-                <h3 class="text-2xl font-bold text-who-navy mt-6">Purpose and Objectives</h3>
-                <p>The GSMS was established to determine the scope, scale, and socio-economic harm caused by SF medical products. It aims to:</p>
+                <h3 class="text-2xl font-bold text-who-navy mt-6">GSMS Purpose and Objectives</h3>
+                <p>To address any problem, it is necessary to first understand it. The GSMS was established to determine the scope, scale, and socio-economic harm caused by SF medical products. Its overall objectives are to:</p>
                 <ul class="list-disc list-inside mt-2 space-y-1">
                     <li>Improve the quantity, quality, and analysis of data on SFMP.</li>
                     <li>Assess the impact of SFMP on health systems and populations.</li>
@@ -111,70 +116,78 @@
                     <li>Inform investment and capacity-building efforts to strengthen regulatory systems.</li>
                 </ul>
 
-                <h3 class="text-2xl font-bold text-who-navy mt-6">Approach</h3>
-                <p>The GSMS collects data which is analyzed into actionable information, used by policy makers and operational stakeholders responsible for safeguarding the quality and safety of medical products available to patients. The case-reporting database uses standardised forms that align with WHO’s data governance policies. The primary platform for data submission is the GSMS Portal, an online interface that allows users to:</p>
+                <h3 class="text-2xl font-bold text-who-navy mt-6">GSMS Services to countries</h3>
+                <p>WHO Member States collaborate with GSMS through designated focal points, supplying data and receiving support in return. The GSMS provides a range of services which can be summarised as follows:</p>
+                <ol class="list-decimal list-inside mt-2 space-y-2">
+                    <li><strong>Data Collection, Analysis, and Coordination:</strong> The GSMS collects and validates reports of SFMP incidents globally. These reports are securely stored and analysed to identify trends, inform risk assessments, and guide technical responses. The system also facilitates international coordination and information exchange among WHO member States.</li>
+                    <li><strong>Risk Communication and Surveillance:</strong> The GSMS promotes structured and systematic reporting. WHO issues communicates on SFMP in different ways to support national regulatory authorities (NRA) to prevent-detect-respond to the issue : <a href="https://www.who.int/teams/regulation-prequalification/incidents-and-SF/full-list-of-who-medical-product-alerts" target="_blank" rel="noopener noreferrer" class="section-link">alerts</a>, <a href="https://www.who.int/news/item/31-03-2025-who-information-notice-for-users-of-malaria-ivds-2025-1" target="_blank" rel="noopener noreferrer" class="section-link">information notices for IVD users</a>, <a href="https://www.who.int/news/item/23-01-2023-who-urges-action-to-protect-children-from-contaminated-medicines" target="_blank" rel="noopener noreferrer" class="section-link">calls to action</a> (to help respond), watch lists (to help detect), and threat assessments (to help prevent). Support is also provided for risk-based post market surveillance activities, and implementing National Action Plans, guided by WHO normative and standard setting work.</li>
+                    <li><strong>Capacity Building and Technical Assistance:</strong> WHO provides training, tools, and technical support to strengthen national regulatory systems. This includes <a href="https://who.csod.com/samldefault.aspx?ouid=1&returnUrl=https://who.csod.com/catalog/CustomPage.aspx?id=221000441" target="_blank" rel="noopener noreferrer" class="section-link">online courses</a>, workshops, and tailored assistance in incident management, data analysis, and crisis communication. The GSMS also supports the development of national surveillance strategies and operational procedures.</li>
+                </ol>
+                
+                <h3 class="text-2xl font-bold text-who-navy mt-6">GSMS Approach</h3>
+                <p>The GSMS collects data which is analyzed into actionable information, used by policy makers and operational stakeholders responsible for safeguarding the quality and safety of medical products available to patients.</p>
+                <p>The primary platform for data submission is the GSMS Portal, a secure online interface that allows authenticated users to:</p>
                  <ul class="list-disc list-inside mt-2 space-y-1">
-                    <li>Submit structured incident reports.</li>
+                    <li>Notify SFMP incidents to the WHO.</li>
+                    <li>Access individual or organization-level repositories of reports.</li>
                     <li>Search the GSMS database.</li>
                     <li>Access training materials, guidelines, and contact directories, etc.</li>
                 </ul>
-                <p>Submitted data undergoes periodic quality control checks. WHO ensures that personal data is handled in compliance with international standards, including GDPR where applicable. A global network provides data to WHO, and the secure GSMS portal allows for structured data input. While the primary data sources are officially nominated national regulatory focal points, the GSMS also collects data from other authorised contributors, such as NGOs, academia, and pharmaceutical companies, who are authorised to report incidents of SF medicines and vaccines. Medical device manufacturers can also report incidents involving in vitro diagnostic devices.</p>
-
-                <h3 class="text-2xl font-bold text-who-navy mt-6">Services to countries</h3>
-                <p>The GSMS provides a range of services to WHO member States. These can be summarised as follows:</p>
-                <ol class="list-decimal list-inside mt-2 space-y-2">
-                    <li><strong>Data Collection, Analysis, and Coordination:</strong> The GSMS collects validated reports of SFMP incidents from a global network of national regulatory authorities (NRAs). These reports are securely stored and analysed to identify trends, inform risk assessments, and guide technical responses. The system also facilitates international coordination and information exchange among Member States.</li>
-                    <li><strong>Risk Communication and Surveillance:</strong> The GSMS promotes structured and systematic reporting. It issues alerts, watch lists, threat assessments, information notices for IVD users, and calls to action to help countries monitor and respond to SFMP. Support is also provided for risk-based post market surveillance activities, and implementing National Action Plans, guided by WHO normative and standard setting work.</li>
-                    <li><strong>Capacity Building and Technical Assistance:</strong> WHO provides training, tools, and technical support to strengthen national regulatory systems. This includes online courses, workshops, and tailored assistance in incident management, data analysis, and risk communication. The GSMS also supports the development of national surveillance strategies and operational procedures.</li>
-                </ol>
-
-                <p>By fostering a culture of vigilance and collaboration, the GSMS helps countries build resilient regulatory systems capable of safeguarding public health. High levels of reporting are indicative of strong surveillance and governance, while underreporting may signal capacity gaps. The GSMS thus serves both as a technical tool and a barometer of regulatory maturity.</p>
+                <p>Submitted data is reviewed by the WHO technical team, who validates the report, liaises with the reporting person, inputs any available additional contextual or missing information, etc. New incidents are prioritized by the WHO technical team based on various criteria such as the need for technical assistance, hazard characterization, etc.</p>
+                <p>The case-reporting database uses standardised forms that allows for structured data input. It is important to note that, because of the case-reporting nature of the database, there can be no extrapolations to prevalence of SFMP by geographical area, product type, etc.</p>
+                <p>While the primary data sources are officially nominated <a href="#focal-point" class="section-link">focal points</a> from national regulatory authorities, the GSMS also collects data from other authenticated and authorised contributors, such as NGOs, academia, and pharmaceutical companies, who report incidents of SF medicines and vaccines. Medical device manufacturers can also report incidents involving in vitro diagnostic devices.</p>
             </div>
         </section>
 
         <!-- Section 2: The Member State mechanism -->
-        <section id="msm" class="bg-white p-8 rounded-lg shadow-lg mb-12 scroll-mt-24">
+        <section id="msm" class="bg-white p-8 rounded-lg shadow-lg mb-12 scroll-mt-40">
             <h2 class="text-3xl font-bold text-who-navy border-b-4 border-who-blue pb-2 mb-6">The Member State Mechanism</h2>
             <div class="space-y-4 text-lg leading-relaxed">
-                <p>The WHO Member State Mechanism (MS-mech) is an intergovernmental platform established by the World Health Assembly in 2012 (WHA65.19) to coordinate global action against substandard and falsified (SF) medical products. It is led by WHO Member States and supported by the WHO Secretariat, operating on principles of transparency, inclusiveness, and public health protection.</p>
-                <p>MS-mech provides a formal forum for countries to share experiences, and best practices in preventing, detecting, and responding to SF medical products. The mechanism operates through biennial workplans endorsed by its Steering Committee and the World Health Assembly. Member States are encouraged to contribute actively and adapt MS-mech outputs to their national contexts.</p>
+                <p>The <a href="https://www.who.int/teams/regulation-prequalification/incidents-and-SF/mechanism" target="_blank" rel="noopener noreferrer" class="section-link">WHO Member State Mechanism (MS-mech)</a> is an intergovernmental platform established by the World Health Assembly in 2012 (WHA65.19) to coordinate global action against substandard and falsified (SF) medical products. It is led by WHO Member States and supported by the WHO Secretariat, operating on principles of transparency, inclusiveness, and public health protection.</p>
                 <p>The objectives of the MS-mech are to:</p>
                 <ul class="list-disc list-inside mt-2 space-y-1">
-                    <li>protect public health and promote access to affordable/safe/efficacious/quality medical products,</li>
-                    <li>promote prevention and control of SF medical products and associated activities</li>
+                    <li>protect public health and promote access to affordable, quality, efficacious and safe medical products,</li>
+                    <li>promote the prevention and control of SF medical products and associated activities</li>
                 </ul>
-                <p>The MS-mech identifies major needs in countries, and WHO leverages evidence to translate these into policies and guidance to strengthen national capacity in various institutional fields (primarily regulation). The MS-mech complements the technical work of the WHO Global Surveillance and Monitoring System (GSMS) by addressing the political and regulatory dimensions of SFMP control. It also helps align global efforts, inform policy, and mobilize resources. By fostering collaboration and shared responsibility, MS-mech plays a vital role in safeguarding public health and ensuring the integrity of medical product supply chains worldwide.</p>
+                 <p>Based on insights provided by the <a href="#gsms" class="section-link">GSMS</a>, and national expertise, the MS-mech prioritises activities, and WHO leverages evidence to translate these into policies and guidance to strengthen national capacity in various institutional fields (primarily regulation).</p>
+                <p>The MS-mech provides a formal forum for countries to share experiences, and best practices in preventing, detecting, and responding to SF medical products. The mechanism operates through biennial workplans endorsed by its Steering Committee and the World Health Assembly. Member States are encouraged to contribute actively and adapt MS-mech outputs to their national contexts. They participate through official representation in MS-mech meetings and working groups.</p>
+                <p>The MS-mech complements the technical work of the WHO Global Surveillance and Monitoring System (GSMS) by addressing the political and regulatory dimensions of SFMP control. It also helps align global efforts, inform policy, and mobilize resources.</p>
+                <p>By fostering collaboration and shared responsibility at a global policy level, the MS-mech plays a vital role in safeguarding public health and ensuring the integrity of medical product supply chains worldwide.</p>
             </div>
         </section>
 
         <!-- Section 3: A data snapshot -->
-        <section id="snapshot" class="bg-white p-8 rounded-lg shadow-lg mb-12 scroll-mt-24">
+        <section id="snapshot" class="bg-white p-8 rounded-lg shadow-lg mb-12 scroll-mt-40">
             <h2 class="text-3xl font-bold text-who-navy border-b-4 border-who-blue pb-2 mb-6">A Data Snapshot</h2>
-            <div class="text-lg text-gray-500 italic">
-                <p>Text to be provided</p>
+            <div class="space-y-4 text-lg leading-relaxed">
+                <p class="font-bold">IMPORTANT NOTE: the data used in this section is from existing WHO publications (specifically the 2017-2021 GSMS report) and is used here to demonstrate the use of Cursor, OpenRouter and MyGPT tools for automated data analysis. The data should not be used as an official source. Please refer to the section “<a href="#references" class="section-link">References</a>” to access official sources and analyses by the WHO on the topic of SFMP.</p>
+                <p><a href="#" class="section-link">Click here to view an automated data report on the relationship between reporting levels and income levels.</a></p>
+                <p>This report describes a critical role of WHO in ensuring the quality and safety of medical products, particularly in LMIC. The report signals the alarming rise in the number of reported incidents of SF medical products, including a wide range of essential medicines, such as antimicrobials, oncology medicines and vaccines.</p>
             </div>
         </section>
 
         <!-- Section 4: Register as a focal point -->
-        <section id="focal-point" class="bg-white p-8 rounded-lg shadow-lg mb-12 scroll-mt-24">
+        <section id="focal-point" class="bg-white p-8 rounded-lg shadow-lg mb-12 scroll-mt-40">
             <h2 class="text-3xl font-bold text-who-navy border-b-4 border-who-blue pb-2 mb-6">Register as a Focal Point</h2>
             <div class="space-y-4 text-lg leading-relaxed">
-                <p>GSMS focal points are officially nominated by the NRAs (or ministry of health) from their country and serve as the primary liaison with WHO. Their responsibilities include:</p>
+                <p>GSMS focal points are officially nominated by the national regulatory authorities (or ministry of health) from their country and serve as the primary national liaison with WHO on issues related to SFMP. Their roles and responsibilities are covered by <a href="#" class="section-link">terms of reference</a> and include:</p>
                 <ul class="list-disc list-inside mt-2 space-y-1">
-                    <li>Incident reporting and data collection.</li>
-                    <li>Coordination of national responses.</li>
+                    <li>Notification of SFMP incidents.</li>
+                    <li>Coordination of multilateral responses.</li>
                     <li>Participation in training and use of GSMS tools.</li>
                     <li>Ensuring confidentiality and secure information sharing.</li>
+                    <li>Support to implement WHO normative guidance on regulatory system strengthening.</li>
                 </ul>
-                <p>The focal point network enables the GSMS to function as a truly global system. It ensures that data flows efficiently from the local to the international level, allowing WHO to detect trends, issue alerts, and coordinate responses across borders. The network also promotes peer learning and collaboration, as focal points share experiences and best practices through regional and global forums. By empowering focal points with the tools, training, and authority to act, WHO strengthens national regulatory systems and enhances global health security. The effectiveness of the GSMS depends heavily on the engagement and performance of this network, making it a vital component of the international effort to combat substandard and falsified medical products.</p>
+                <p>The focal point network enables the GSMS to function as a truly global system. It ensures that data flows efficiently from the local to the international level, allowing WHO to detect trends, issue alerts, and coordinate responses across borders. The network also promotes peer learning and collaboration, as focal points share experiences and best practices through regional and global forums.</p>
+                <p>By empowering focal points with the tools, training, and authority to act, WHO strengthens national regulatory systems and enhances global health security. The effectiveness of the GSMS depends heavily on the engagement and performance of this network, making it a vital component of the international effort to combat substandard and falsified medical products.</p>
                 <div class="mt-6 p-6 bg-who-purple text-white rounded-lg text-center">
-                    <p class="font-bold text-xl">If you have been nominated by your organisation to act as focal point to the GSMS, please complete the below form. The WHO technical team will follow up with you for authentication and Portal access</p>
+                    <p class="font-bold text-xl">If you have been nominated by your organisation to serve as focal point to the GSMS, please complete the below form. The WHO technical team will follow up for authentication and access to the GSMS Portal.</p>
                 </div>
             </div>
         </section>
 
         <!-- Section 5: References / useful reading -->
-        <section id="references" class="bg-white p-8 rounded-lg shadow-lg scroll-mt-24">
+        <section id="references" class="bg-white p-8 rounded-lg shadow-lg scroll-mt-40">
             <h2 class="text-3xl font-bold text-who-navy border-b-4 border-who-blue pb-2 mb-6">References & Useful Reading</h2>
             <ul class="list-disc list-inside space-y-3 text-lg">
                 <li><a href="https://www.who.int/health-topics/substandard-and-falsified-medical-products#tab=tab_1" target="_blank" rel="noopener noreferrer" class="section-link">WHO work on Substandard-Falsified Medical Products</a></li>
