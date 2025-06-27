@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated GSMS Services</title>
+<style>
+    :root {
+        /* Colors from the image */
+        --color-center: #fbb03b;
+        --color-incident: #1a75bb;
+        --color-analytical: #00b0e9;
+        --color-risk: #00a99d;
+        --color-networks: #8dc63f;
+        --color-training: #b5d334;
+        --color-normative: #00a1e4;
+
+        /* Sizing - using viewport units for better scaling */
+        --hexagon-width: 20vmin;
+        --animation-radius: 22vmin; /* How far the hexagons are from the center */
+        --animation-duration: 20s; /* Speed of one full rotation */
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f4f8;
+        font-family: 'Inter', Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    .container {
+        position: relative;
+        width: calc(var(--animation-radius) * 2 + var(--hexagon-width));
+        height: calc(var(--animation-radius) * 2 + var(--hexagon-width));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Base styles for all hexagons */
+    .hexagon {
+        position: absolute;
+        width: var(--hexagon-width);
+        height: calc(var(--hexagon-width) * 1.1547); /* aspect ratio for regular hexagon */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 2vmin;
+        line-height: 1.2;
+        /* This creates the hexagon shape */
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        padding: 0 15px;
+        box-sizing: border-box; /* Ensures padding is included in the width/height */
+    }
+
+    /* The central hexagon */
+    .center-hexagon {
+        background-color: var(--color-center);
+        z-index: 10;
+        width: calc(var(--hexagon-width) * 1.1); /* Slightly larger */
+        height: calc(var(--hexagon-width) * 1.1 * 1.1547);
+        font-size: 2.5vmin;
+    }
+
+    /* The rotating container for the outer hexagons */
+    .animator {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        animation: rotate-clockwise var(--animation-duration) linear infinite;
+    }
+
+    /* Keyframes for the main clockwise rotation */
+    @keyframes rotate-clockwise {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    
+    /* Keyframes to counter-rotate the content, keeping it level */
+    @keyframes counter-rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(-360deg); }
+    }
+
+
+    .outer-hexagon-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: var(--hexagon-width);
+        height: calc(var(--hexagon-width) * 1.1547);
+        margin-top: calc(var(--hexagon-width) * -0.577); /* half of height */
+        margin-left: calc(var(--hexagon-width) * -0.5); /* half of width */
+    }
+
+    /* Position each outer hexagon on the circular path */
+    .pos-1 { transform: rotate(0deg) translateY(calc(var(--animation-radius) * -1)) rotate(0deg); }
+    .pos-2 { transform: rotate(60deg) translateY(calc(var(--animation-radius) * -1)) rotate(-60deg); }
+    .pos-3 { transform: rotate(120deg) translateY(calc(var(--animation-radius) * -1)) rotate(-120deg); }
+    .pos-4 { transform: rotate(180deg) translateY(calc(var(--animation-radius) * -1)) rotate(-180deg); }
+    .pos-5 { transform: rotate(240deg) translateY(calc(var(--animation-radius) * -1)) rotate(-240deg); }
+    .pos-6 { transform: rotate(300deg) translateY(calc(var(--animation-radius) * -1)) rotate(-300deg); }
+
+    /* The outer hexagons themselves */
+    .outer-hexagon {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    
+    .outer-hexagon .content {
+        /* Apply counter-rotation to keep text and hexagon orientation fixed */
+        animation: counter-rotate var(--animation-duration) linear infinite;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Assigning colors */
+    .incident { background-color: var(--color-incident); }
+    .analytical { background-color: var(--color-analytical); }
+    .risk { background-color: var(--color-risk); }
+    .networks { background-color: var(--color-networks); }
+    .training { background-color: var(--color-training); }
+    .normative { background-color: var(--color-normative); }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="hexagon center-hexagon">Database</div>
+
+    <div class="animator">
+        <!-- Incident support -->
+        <div class="outer-hexagon-container pos-1">
+            <div class="outer-hexagon">
+                <div class="content"><div class="hexagon incident">Incident support</div></div>
+            </div>
+        </div>
+        <!-- Analytical insights -->
+        <div class="outer-hexagon-container pos-2">
+            <div class="outer-hexagon">
+                <div class="content"><div class="hexagon analytical">Analytical insights</div></div>
+            </div>
+        </div>
+        <!-- Risk communication -->
+        <div class="outer-hexagon-container pos-3">
+             <div class="outer-hexagon">
+                <div class="content"><div class="hexagon risk">Risk commu&shy;nication</div></div>
+            </div>
+        </div>
+        <!-- Multilateral networks -->
+        <div class="outer-hexagon-container pos-4">
+            <div class="outer-hexagon">
+                <div class="content"><div class="hexagon networks">Multi&shy;lateral networks</div></div>
+            </div>
+        </div>
+        <!-- Training & capacity building -->
+        <div class="outer-hexagon-container pos-5">
+            <div class="outer-hexagon">
+                <div class="content"><div class="hexagon training">Training & capacity building</div></div>
+            </div>
+        </div>
+        <!-- Normative guidance -->
+        <div class="outer-hexagon-container pos-6">
+            <div class="outer-hexagon">
+                <div class="content"><div class="hexagon normative">Normative guidance</div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
