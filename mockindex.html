@@ -148,6 +148,16 @@
         .networks { background-color: var(--color-networks); }
         .training { background-color: var(--color-training); }
         .normative { background-color: var(--color-normative); }
+
+        /* Custom styles for Botpress Webchat Launcher */
+        .bp-widget-button {
+            width: 75px !important;
+            height: 75px !important;
+        }
+        .bp-widget-button > div > svg {
+            width: 40px !important;
+            height: 40px !important;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -291,7 +301,7 @@
                 <p>SFMP incidents can be recorded in the GSMS only after they have been detected locally, and then reported (i.e. information shared) to the WHO. As stated above, data in the GSMS cannot be extrapolated to any form of prevalence of SFMP – however it is indeed an indicator of the capacity to detect and report. The volume of incidents and products recorded in the GSMS database are usually aggregated by WHO regions. In this semi-automated analysis, we used OpenRouter API key and MyGPT function to:</p>
                 <ol class="list-decimal list-inside ml-5 space-y-1">
                     <li>Assign an income-level group to each country in in the dataset: High income, Upper-middle income, Lower-middle income, Low income.</li>
-                    <li>Assign bespoke population based groupings to each country: very large (>100 million) , large (40-100 million) , medium (10-40 million), small (1-10 million), Microstate (<1 million).</li>
+                    <li>Assign bespoke population based groupings to each country: very large (>100 million) , large (40-100 million) , medium (10-40 million), small (1-10 million), microstate (<1 million).</li>
                 </ol>
                 <p>In the case of these two continuously changing indicators, an API key is useful. The enhanced dataset was then uploaded to Cursor, prompted to run an analysis, present the data by income groups and population size groups, instead of regional groups, and provide an interpretation of these relationships (using Pearson's or any other relevant correlation coefficient).</p>
                 <p>The GSMS database is relational database, with several interconnected entities. In particular the “Incident” and “Product” entities have a hierarchical parent-child relationship.</p>
@@ -305,7 +315,7 @@
         <section id="focal-point" class="bg-white p-8 rounded-lg shadow-lg mb-12 scroll-mt-40">
             <h2 class="text-3xl font-bold text-who-navy border-b-4 border-who-blue pb-2 mb-6">Register as a Focal Point</h2>
             <div class="space-y-4 text-lg leading-relaxed">
-                <p>GSMS focal points are officially nominated by the national regulatory authorities (or ministry of health) from their country and serve as the primary national liaison with WHO on issues related to SFMP. Their roles and responsibilities are covered by <a href="#" class="section-link">terms of reference</a> and include:</p>
+                <p>GSMS focal points are officially nominated by the national regulatory authorities (or ministry of health) from their country and serve as the primary national liaison with WHO on issues related to SFMP. Their roles and responsibilities are covered by <a href="https://apps.who.int/gb/SF/pdf_files/MSM4/A_MSM4_2-en.pdf" target="_blank" rel="noopener noreferrer" class="section-link">terms of reference</a> and include:</p>
                 <ul class="list-disc list-inside mt-2 space-y-1">
                     <li>Notification of SFMP incidents.</li>
                     <li>Coordination of multilateral responses.</li>
@@ -346,6 +356,10 @@
     <footer class="bg-who-navy text-white mt-12 p-6 text-center">
         <p>This website is a capstone project for the "Generative AI for Work & Research" course.</p>
     </footer>
+
+    <!-- Chatbot Scripts -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/06/24/19/20250624194029-D5SR43KG.js"></script>
 
 </body>
 </html>
