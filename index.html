@@ -148,6 +148,16 @@
         .networks { background-color: var(--color-networks); }
         .training { background-color: var(--color-training); }
         .normative { background-color: var(--color-normative); }
+
+        /* Custom styles for Botpress Webchat Launcher */
+        .bp-widget-button {
+            width: 75px !important;
+            height: 75px !important;
+        }
+        .bp-widget-button > div > svg {
+            width: 40px !important;
+            height: 40px !important;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -305,7 +315,7 @@
         <section id="focal-point" class="bg-white p-8 rounded-lg shadow-lg mb-12 scroll-mt-40">
             <h2 class="text-3xl font-bold text-who-navy border-b-4 border-who-blue pb-2 mb-6">Register as a Focal Point</h2>
             <div class="space-y-4 text-lg leading-relaxed">
-                <p>GSMS focal points are officially nominated by the national regulatory authorities (or ministry of health) from their country and serve as the primary national liaison with WHO on issues related to SFMP. Their roles and responsibilities are covered by <a href="#" class="section-link">terms of reference</a> and include:</p>
+                <p>GSMS focal points are officially nominated by the national regulatory authorities (or ministry of health) from their country and serve as the primary national liaison with WHO on issues related to SFMP. Their roles and responsibilities are covered by <a href="https://apps.who.int/gb/SF/pdf_files/MSM4/A_MSM4_2-en.pdf" target="_blank" rel="noopener noreferrer" class="section-link">terms of reference</a> and include:</p>
                 <ul class="list-disc list-inside mt-2 space-y-1">
                     <li>Notification of SFMP incidents.</li>
                     <li>Coordination of multilateral responses.</li>
@@ -346,6 +356,10 @@
     <footer class="bg-who-navy text-white mt-12 p-6 text-center">
         <p>This website is a capstone project for the "Generative AI for Work & Research" course.</p>
     </footer>
+
+    <!-- Chatbot Scripts -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/06/24/19/20250624194029-D5SR43KG.js"></script>
 
 </body>
 </html>
