@@ -54,6 +54,100 @@
             font-weight: bold;
             text-decoration: underline;
         }
+
+        /* Styles for the animated GIF */
+        .animation-root {
+            --color-center: #fbb03b;
+            --color-incident: #1a75bb;
+            --color-analytical: #00b0e9;
+            --color-risk: #00a99d;
+            --color-networks: #8dc63f;
+            --color-training: #b5d334;
+            --color-normative: #00a1e4;
+            --hexagon-width: 120px;
+            --animation-radius: 140px; 
+            --animation-duration: 20s;
+        }
+        .animation-container {
+            position: relative;
+            width: calc(var(--animation-radius) * 2 + var(--hexagon-width));
+            height: calc(var(--animation-radius) * 2 + var(--hexagon-width));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hexagon {
+            position: absolute;
+            width: var(--hexagon-width);
+            height: calc(var(--hexagon-width) * 1.1547);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 1.2;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+        .center-hexagon {
+            background-color: var(--color-center);
+            z-index: 10;
+            width: calc(var(--hexagon-width) * 1.1);
+            height: calc(var(--hexagon-width) * 1.1 * 1.1547);
+            font-size: 16px;
+        }
+        .animator {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: rotate-clockwise var(--animation-duration) linear infinite;
+        }
+        @keyframes rotate-clockwise {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes counter-rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+        }
+        .outer-hexagon-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: var(--hexagon-width);
+            height: calc(var(--hexagon-width) * 1.1547);
+            margin-top: calc(var(--hexagon-width) * -0.577);
+            margin-left: calc(var(--hexagon-width) * -0.5);
+        }
+        .pos-1 { transform: rotate(0deg) translateY(calc(var(--animation-radius) * -1)) rotate(0deg); }
+        .pos-2 { transform: rotate(60deg) translateY(calc(var(--animation-radius) * -1)) rotate(-60deg); }
+        .pos-3 { transform: rotate(120deg) translateY(calc(var(--animation-radius) * -1)) rotate(-120deg); }
+        .pos-4 { transform: rotate(180deg) translateY(calc(var(--animation-radius) * -1)) rotate(-180deg); }
+        .pos-5 { transform: rotate(240deg) translateY(calc(var(--animation-radius) * -1)) rotate(-240deg); }
+        .pos-6 { transform: rotate(300deg) translateY(calc(var(--animation-radius) * -1)) rotate(-300deg); }
+        .outer-hexagon {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .outer-hexagon .content {
+            animation: counter-rotate var(--animation-duration) linear infinite;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .incident { background-color: var(--color-incident); }
+        .analytical { background-color: var(--color-analytical); }
+        .risk { background-color: var(--color-risk); }
+        .networks { background-color: var(--color-networks); }
+        .training { background-color: var(--color-training); }
+        .normative { background-color: var(--color-normative); }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -94,7 +188,7 @@
         <section id="gsms" class="bg-white p-8 rounded-lg shadow-lg mb-12 scroll-mt-40">
             <h2 class="text-3xl font-bold text-who-navy border-b-4 border-who-blue pb-2 mb-6">The Global Surveillance and Monitoring System</h2>
             <div class="space-y-4 text-lg leading-relaxed">
-                <p>The WHO Global Surveillance and Monitoring System (GSMS) is a technical programme launched in 2010 to address the global threat posed by <a href="https://www.who.int/teams/regulation-prequalification/incidents-and-SF/background/definitions" target="_blank" rel="noopener noreferrer" class="section-link">substandard and falsified medical products (SFMP)</a>. These products undermine all investments in public health, compromise patient safety, and erode trust in health systems. The GSMS serves as WHO’s central instrument to prevent, detect, and respond to SFMP incidents worldwide.</p>
+                <p>The WHO Global Surveillance and Monitoring System (GSMS) is a technical programme initiated in 2010 to address the global threat posed by <a href="https://www.who.int/teams/regulation-prequalification/incidents-and-SF/background/definitions" target="_blank" rel="noopener noreferrer" class="section-link">substandard and falsified medical products (SFMP)</a>. These products undermine all investments in public health, compromise patient safety, and erode trust in health systems. The GSMS serves as WHO’s central instrument to prevent, detect, and respond to SFMP incidents worldwide.</p>
                 
                 <div class="p-6 bg-blue-50 border-l-4 border-who-blue rounded-r-lg">
                     <h3 class="text-2xl font-bold text-who-navy mb-3">A Three-Pillar Strategy</h3>
@@ -117,12 +211,44 @@
                 </ul>
 
                 <h3 class="text-2xl font-bold text-who-navy mt-6">GSMS Services to countries</h3>
-                <p>WHO Member States collaborate with GSMS through designated focal points, supplying data and receiving support in return. The GSMS provides a range of services which can be summarised as follows:</p>
+                <p>WHO Member States collaborate with GSMS through designated focal points, supplying data and receiving support in return. The GSMS database serves as the foundation on which a range of bespoke services can be provided to countries:</p>
                 <ol class="list-decimal list-inside mt-2 space-y-2">
                     <li><strong>Data Collection, Analysis, and Coordination:</strong> The GSMS collects and validates reports of SFMP incidents globally. These reports are securely stored and analysed to identify trends, inform risk assessments, and guide technical responses. The system also facilitates international coordination and information exchange among WHO member States.</li>
                     <li><strong>Risk Communication and Surveillance:</strong> The GSMS promotes structured and systematic reporting. WHO issues communicates on SFMP in different ways to support national regulatory authorities (NRA) to prevent-detect-respond to the issue : <a href="https://www.who.int/teams/regulation-prequalification/incidents-and-SF/full-list-of-who-medical-product-alerts" target="_blank" rel="noopener noreferrer" class="section-link">alerts</a>, <a href="https://www.who.int/news/item/31-03-2025-who-information-notice-for-users-of-malaria-ivds-2025-1" target="_blank" rel="noopener noreferrer" class="section-link">information notices for IVD users</a>, <a href="https://www.who.int/news/item/23-01-2023-who-urges-action-to-protect-children-from-contaminated-medicines" target="_blank" rel="noopener noreferrer" class="section-link">calls to action</a> (to help respond), watch lists (to help detect), and threat assessments (to help prevent). Support is also provided for risk-based post market surveillance activities, and implementing National Action Plans, guided by WHO normative and standard setting work.</li>
                     <li><strong>Capacity Building and Technical Assistance:</strong> WHO provides training, tools, and technical support to strengthen national regulatory systems. This includes <a href="https://who.csod.com/samldefault.aspx?ouid=1&returnUrl=https://who.csod.com/catalog/CustomPage.aspx?id=221000441" target="_blank" rel="noopener noreferrer" class="section-link">online courses</a>, workshops, and tailored assistance in incident management, data analysis, and crisis communication. The GSMS also supports the development of national surveillance strategies and operational procedures.</li>
                 </ol>
+
+                <div class="my-8 flex justify-center animation-root">
+                    <div class="animation-container">
+                        <div class="hexagon center-hexagon">Database</div>
+                        <div class="animator">
+                            <!-- Incident support -->
+                            <div class="outer-hexagon-container pos-1">
+                                <div class="outer-hexagon"><div class="content"><div class="hexagon incident">Incident support</div></div></div>
+                            </div>
+                            <!-- Analytical insights -->
+                            <div class="outer-hexagon-container pos-2">
+                                <div class="outer-hexagon"><div class="content"><div class="hexagon analytical">Analytical insights</div></div></div>
+                            </div>
+                            <!-- Risk communication -->
+                            <div class="outer-hexagon-container pos-3">
+                                 <div class="outer-hexagon"><div class="content"><div class="hexagon risk">Risk commu&shy;nication</div></div></div>
+                            </div>
+                            <!-- Multilateral networks -->
+                            <div class="outer-hexagon-container pos-4">
+                                <div class="outer-hexagon"><div class="content"><div class="hexagon networks">Multi&shy;lateral networks</div></div></div>
+                            </div>
+                            <!-- Training & capacity building -->
+                            <div class="outer-hexagon-container pos-5">
+                                <div class="outer-hexagon"><div class="content"><div class="hexagon training">Training & capacity building</div></div></div>
+                            </div>
+                            <!-- Normative guidance -->
+                            <div class="outer-hexagon-container pos-6">
+                                <div class="outer-hexagon"><div class="content"><div class="hexagon normative">Normative guidance</div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <h3 class="text-2xl font-bold text-who-navy mt-6">GSMS Approach</h3>
                 <p>The GSMS collects data which is analyzed into actionable information, used by policy makers and operational stakeholders responsible for safeguarding the quality and safety of medical products available to patients.</p>
@@ -160,9 +286,18 @@
         <section id="snapshot" class="bg-white p-8 rounded-lg shadow-lg mb-12 scroll-mt-40">
             <h2 class="text-3xl font-bold text-who-navy border-b-4 border-who-blue pb-2 mb-6">A Data Snapshot</h2>
             <div class="space-y-4 text-lg leading-relaxed">
-                <p class="font-bold">IMPORTANT NOTE: the data used in this section is from existing WHO publications (specifically the 2017-2021 GSMS report) and is used here to demonstrate the use of Cursor, OpenRouter and MyGPT tools for automated data analysis. The data should not be used as an official source. Please refer to the section “<a href="#references" class="section-link">References</a>” to access official sources and analyses by the WHO on the topic of SFMP.</p>
-                <p><a href="#" class="section-link">Click here to view an automated data report on the relationship between reporting levels and income levels.</a></p>
-                <p>This report describes a critical role of WHO in ensuring the quality and safety of medical products, particularly in LMIC. The report signals the alarming rise in the number of reported incidents of SF medical products, including a wide range of essential medicines, such as antimicrobials, oncology medicines and vaccines.</p>
+                <p class="font-bold">IMPORTANT NOTE: the data used in this section is from existing WHO publications (specifically the 2017-2021 GSMS report) and is used here to demonstrate the use of Cursor, OpenRouter and MyGPT tools for automated data analysis. The data should not be used as an official source. Please refer to the section “<a href="#references" class="section-link">References</a>” to access official sources and analyses by the WHO on the topic of SFMP. As an additional precautionary measure, the data used has been purposely modified and “adulterated”.</p>
+                <p><a href="https://raw.githack.com/PBE1208/mockgsms/main/WHO_SFMP_Data_Report.pdf" target="_blank" rel="noopener noreferrer" class="section-link">Click here to view an automated data report on the relationship between reporting levels, income levels and population sizes.</a></p>
+                <p>SFMP incidents can be recorded in the GSMS only after they have been detected locally, and then reported (i.e. information shared) to the WHO. As stated above, data in the GSMS cannot be extrapolated to any form of prevalence of SFMP – however it is indeed an indicator of the capacity to detect and report. The volume of incidents and products recorded in the GSMS database are usually aggregated by WHO regions. In this semi-automated analysis, we used OpenRouter API key and MyGPT function to:</p>
+                <ol class="list-decimal list-inside ml-5 space-y-1">
+                    <li>Assign an income-level group to each country in in the dataset: High income, Upper-middle income, Lower-middle income, Low income.</li>
+                    <li>Assign bespoke population based groupings to each country: very large (>100 million) , large (40-100 million) , medium (10-40 million), small (1-10 million), Microstate (<1 million).</li>
+                </ol>
+                <p>In the case of these two continuously changing indicators, an API key is useful. The enhanced dataset was then uploaded to Cursor, prompted to run an analysis, present the data by income groups and population size groups, instead of regional groups, and provide an interpretation of these relationships (using Pearson's or any other relevant correlation coefficient).</p>
+                <p>The GSMS database is relational database, with several interconnected entities. In particular the “Incident” and “Product” entities have a hierarchical parent-child relationship.</p>
+                <p><strong>Incident:</strong> An incident record corresponds to a notification of one or more medical products (medicines or vaccines) that are either suspected or confirmed to be substandard or falsified. These products must have been discovered at the same place and time, or as part of the same activity. Each incident is treated as a unique event and is recorded as a parent entity in the GSMS database.</p>
+                <p><strong>Product:</strong> A product record is a child entity linked to an incident. It represents a specific medicine or vaccine reported within that incident. Each product record is uniquely identified by a combination of product name, batch/lot number, expiry date, and manufacturing date. If the same product is reported through different incidents, separate product records are created for each occurrence.</p>
+                <p>These definitions are foundational to the GSMS database structure, enabling differentiation between the context of discovery (incident) and the specific items involved (products), which supports more precise analysis of the scale and distribution of SFMP.</p>
             </div>
         </section>
 
